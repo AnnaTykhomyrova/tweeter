@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
   function createTweetElement (tweetObj) {
     var $tweetArticle = `
       <article class="tweets-container">
@@ -8,7 +13,7 @@ $(document).ready(function() {
             <span class="header_el">${tweetObj.user.handle}</span>
           </header>
           <section>
-            <h3>${tweetObj.content.text}</h3>
+            <h3>${escape(tweetObj.content.text)}</h3>
           </section>
           <footer>
             <h5>${tweetObj.created_at}</h5>
@@ -30,12 +35,16 @@ function renderTweets (tweetData) {
   }
 }
 
+$( ".compose-button" ).click(function() {
+  $( ".new-tweet" ).slideToggle( "slow" );
+  $("textarea").focus();
+});
+
 function loadTweets () {
  $.ajax({
   method: 'GET',
   url: '/tweets/',
   success: function (dataTweets) {
-    console.log('Success!');
     renderTweets(dataTweets);
   }
 });
@@ -47,26 +56,20 @@ var $form = $('#new-tweet-form');
 $form.on('submit',function (ev) {
   ev.preventDefault();
   const data = $form.serialize();
-
-  if (data === ""|| data === null) {
-    alert("Your tweet content is not present!");
-  } else if (data.length > 140) {
-    alert("Your tweet content is too long!");
+  var input = $('#new-tweet-form textarea').val();
+  if (input.length === 0) {
+    return $(".error").text("Error: Your tweet content is not present").slideToggle(true);
+  } else if (input.length > 140) {
+    return $(".error").text("Error: Your tweet content is too long").slideToggle(true);
   } else {
     $.ajax({
     method: 'POST',
     url: '/tweets/',
     data: data,
     success: function () {
-      // console.log('Success!');
       loadTweets();
     }
   });
 }
 });
-
-
-
-
-
-})
+});

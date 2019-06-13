@@ -124,3 +124,8 @@ textarea {
     margin-right: 4px;
 }
 
+.error{
+    display: none;
+    color: red;
+    font-size:small;
+}
