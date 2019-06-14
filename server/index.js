@@ -1,7 +1,7 @@
 "use strict";
 
-// Basic express setup:
-const MongoClient = require("mongodb").MongoClient;
+// Basic express and MongoDB setup:
+const {MongoClient} = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
 const PORT          = 8080;
@@ -11,9 +11,6 @@ const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
-// The in-memory database of tweets. It's a basic object with an array in it.
-// const db = require("./lib/in-memory-db");
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {

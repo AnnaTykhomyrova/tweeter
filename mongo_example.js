@@ -1,6 +1,6 @@
 "use strict";
 
-const MongoClient = require("mongodb").MongoClient;
+const {MongoClient} = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
@@ -9,6 +9,10 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     throw err;
   }
 
+  // We have a connection to the "tweeter" db, starting here.
+  console.log(`Connected to mongodb: ${MONGODB_URI}`);
+
+  // ==> Function that get all the tweets and put them to the array
   function getTweets(callback) {
     db.collection("tweets").find().toArray((err, tweets) => {
       if (err) {
