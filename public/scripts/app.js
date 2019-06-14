@@ -42,12 +42,13 @@ $( ".compose-button" ).click(function() {
 
 function loadTweets () {
  $.ajax({
-  method: 'GET',
-  url: '/tweets/',
-  success: function (dataTweets) {
-    renderTweets(dataTweets);
-  }
-});
+    method: 'GET',
+    url: '/tweets/',
+    success: function (dataTweets) {
+      $('.tweets').empty();
+      renderTweets(dataTweets);
+    }
+  });
 }
 
 loadTweets();
@@ -63,13 +64,13 @@ $form.on('submit',function (ev) {
     return $(".error").text("Error: Your tweet content is too long").slideToggle(true);
   } else {
     $.ajax({
-    method: 'POST',
-    url: '/tweets/',
-    data: data,
-    success: function () {
-      loadTweets();
-    }
-  });
-}
+      method: 'POST',
+      url: '/tweets/',
+      data: data,
+      success: function () {
+        loadTweets();
+      }
+    });
+  }
 });
 });

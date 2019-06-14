@@ -27,21 +27,33 @@
 #nav-bar .compose-button {
   position: absolute;
   transition: .5s ease;
-  top: 20%;
   right: 5%;
   height: 50px;
   background-color: rgba(224, 255, 241, 0.9);
   color: rgb(50, 153, 102);
   border: 1px solid black;
   border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 30px;
+  width: 100px;
 }
 
 #nav-bar .compose-button:hover {
   cursor: pointer;
   background-color: #fff;
+  color: black;
 }
 
+.far {
+  position: absolute;
+  right: 72px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(50, 153, 102);
+  transition: .5s ease;
+}
 
-
-
-
+#nav-bar .compose-button:hover .far {
+  color: black;
+}
