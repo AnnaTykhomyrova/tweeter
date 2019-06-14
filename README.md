@@ -13,6 +13,7 @@ Tweeter Project is build upon HTML, CSS, JS, jQuery and AJAX front-end skills, a
 !["Screenshot of action after clicking Compose button."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-ection-after-clicking-Compose-button.png)
 !["Screenshot of input form."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-input-form.png)
 !["Screenshot of action after clicking Tweet button."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-ection-after-clicking-Tweet-button.png)
+!["Screenshot of hover effect on tweet box"](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-hover-effect-on-tweet-box.png)
 
 
 ## Dependencies
