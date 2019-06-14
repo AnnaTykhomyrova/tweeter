@@ -1,3 +1,4 @@
+// counter implementation
 $(document).ready(function() {
   var num = $('.counter').text();
   $('textarea').on('input', function(ev) {

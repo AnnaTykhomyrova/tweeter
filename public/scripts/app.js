@@ -1,9 +1,15 @@
+// Whatever code you write inside the $(document ).ready() method will run once the page DOM is ready to execute
+// JavaScript code
 $(document).ready(function() {
+
+  // function that prevent Cross-Site Scripting
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
+
+// function that creates new tweets
   function createTweetElement (tweetObj) {
     var $tweetArticle = `
       <article class="tweets-container">
@@ -28,18 +34,19 @@ $(document).ready(function() {
     return $tweetArticle;
   }
 
+// function that shows new tweets on the page
 function renderTweets (tweetData) {
   for (tweet of tweetData) {
     var $tweet = createTweetElement(tweet);
     $('.tweets').prepend($tweet);
   }
 }
-
 $( ".compose-button" ).click(function() {
   $( ".new-tweet" ).slideToggle( "slow" );
   $("textarea").focus();
 });
 
+// function that loads new tweets using ajax GET
 function loadTweets () {
  $.ajax({
     method: 'GET',
@@ -54,6 +61,9 @@ function loadTweets () {
 loadTweets();
 
 var $form = $('#new-tweet-form');
+
+// event listener that waits when the Tweet button will be pushed and function that will be executed after.
+// Also here is some validation for form
 $form.on('submit',function (ev) {
   ev.preventDefault();
   const data = $form.serialize();

@@ -90,12 +90,12 @@ textarea {
 .tweets-container .header {
   font-size: 1.5em;
   vertical-align: middle;
-  margin-left: 15px;
+  margin-left: 10px;
   font-weight: 600;
 }
 
 .tweets-container .header_el{
-  padding: 15px 11px 0 0;
+  padding: 15px 8px 0 0;
   float: right;
 }
 
