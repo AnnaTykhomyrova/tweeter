@@ -63,6 +63,8 @@ $form.on('submit',function (ev) {
   } else if (input.length > 140) {
     return $(".error").text("Error: Your tweet content is too long").slideToggle(true);
   } else {
+    $('textarea').val('');
+    $('.counter').text('140');
     $.ajax({
       method: 'POST',
       url: '/tweets/',

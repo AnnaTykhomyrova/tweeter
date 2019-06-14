@@ -57,3 +57,7 @@
 #nav-bar .compose-button:hover .far {
   color: black;
 }
+
+#nav-bar .compose-button:hover .new-tweet {
+  display: block;
+}
