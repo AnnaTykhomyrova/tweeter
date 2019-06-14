@@ -9,10 +9,10 @@ This project uses port 8080 (http://localhost:8080/ in your browser.)
 Tweeter Project is build upon HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express and MongoDB back-end skills.
 
 # Final Product
-!["Screenshot of ."]()
-!["Screenshot of ."])
-!["Screenshot of ."]()
-!["Screenshot of ."]()
+!["Screenshot of the firs page."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-first-page.png)
+!["Screenshot of action after clicking Compose button."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-ection-after-clicking-Compose-button.png)
+!["Screenshot of input form."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-input-form.png)
+!["Screenshot of action after clicking Tweet button."](https://github.com/AnnaTykhomyrova/tweeter/blob/master/docs/tweeter-ection-after-clicking-Tweet-button.png)
 
 
 ## Dependencies
