@@ -68,10 +68,13 @@ $form.on('submit',function (ev) {
   ev.preventDefault();
   const data = $form.serialize();
   var input = $('#new-tweet-form textarea').val();
+  if ($(".error")) {
+    $(".error").slideUp(true);
+  }
   if (input.length === 0) {
-    return $(".error").text("Error: Your tweet content is not present").slideToggle(true);
+    return $(".error").text("Error: Your tweet content is not present").slideDown(true);
   } else if (input.length > 140) {
-    return $(".error").text("Error: Your tweet content is too long").slideToggle(true);
+    return $(".error").text("Error: Your tweet content is too long").slideDown(true);
   } else {
     $('textarea').val('');
     $('.counter').text('140');
